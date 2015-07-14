@@ -3,9 +3,10 @@ $(function (){
   $('#scan_btn').click(function (event) {   
     event.preventDefault();    
     $.ajax(
-    { url: "scan",
+      { url: "scan",
       type: "GET" });
-    $('#jstree_json_dirs').jstree("refresh");    
+    $('#jstree_json_dirs').jstree("refresh");
+    $('#jstree_json_files').jstree("refresh");   
   });
 
   $('#jstree_json_dirs').jstree(
@@ -29,6 +30,32 @@ $(function (){
     console.log(parent);
     console.log(position);
     console.log(old_parent);
+    $.ajax({
+     type:'GET', 
+     url: 'update',
+     dataType: 'json',
+     data: $.param({id: text.node.id, name: text.text})
+   });
+  });
+
+  $('#jstree_json_dirs').on("rename_node.jstree", function(node, text, old){
+    console.log(text.node.id);
+    $.ajax({
+     type:'GET', 
+     url: 'update',
+     dataType: 'json',
+     data: $.param({id: text.node.id, name: text.text})
+   });
+  });
+
+  $('#jstree_json_files').on("rename_node.jstree", function(node, text, old){
+    console.log(text.node.id);
+    $.ajax({
+     type:'GET', 
+     url: 'update',
+     dataType: 'json',
+     data: $.param({id: text.node.id, name: text.text})
+   });
   });
 
 
@@ -49,11 +76,7 @@ $(function (){
       "plugins": ["checkbox", "contextmenu", "crrm", "dnd", "json_data", "state", "types", "search", "ui", "wholerow"],
       "move_node":"true",
       "rename_node":"true"
-    });  
-
-
-
-    // console.log(selected.node.id);
+    });
   })
 
 

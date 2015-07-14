@@ -13,4 +13,10 @@ class FilesystemController < ApplicationController
       format.json
     end
   end
+
+  def update
+    Item.update(params[:id], :name => params[:name])   
+    render :nothing => true, :status => 200, :content_type => 'text/html'
+  end
+
 end
