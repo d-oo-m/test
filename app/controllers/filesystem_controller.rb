@@ -1,7 +1,7 @@
 require 'scaner'
 class FilesystemController < ApplicationController
   def scan
-    Item.all.each{|i| i.delete }
+    Item.all.each{|i| i.delete}
 
     Scaner.new.start Pathname.new(Rails.root)
   end
