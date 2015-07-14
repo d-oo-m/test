@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="header clearfix">
+    <h3 class="text-muted">Test task for Nazar</h3>
+  </div>
+
+  <div class="jumbotron">
+    <h2>File structure in current directory</h2> 
+    <p class="lead">Please, click on the button below to scan the current folder.</p>
+    <%= link_to 'Scan', '', :onclick => 'scan()', :class => "btn btn-lg btn-success"  %>
+  </div>
+
+    <div class="col-lg-6">
+      <h3>Dirs with json</h3>
+      <div style="margin:10px" id="jstree_json_dirs">
+      </div> 
+    </div>
+
+    <div class="col-lg-6">
+      <h3>Files with json</h3>
+      <div style="margin:10px" id="jstree_json_files">
+      </div> 
+    </div>
+
+</div>

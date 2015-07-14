@@ -1,0 +1,1 @@
+json.partial! "filesystem/dir", dir: @dir
