@@ -19,8 +19,9 @@ $(function (){
       },
       'check_callback':true
     },
-    "plugins": ["search", "wholerow", "dnd", "checkbox", "types","json_data", "ui", "crrm"],
-    "move_node":"true"
+    "plugins": ["search", "contextmenu", "wholerow", "dnd", "checkbox", "types","json_data", "ui", "crrm"],
+    "move_node":"true",
+    "rename_node":"true"
   });
 
   $('#jstree_json_dirs').on("move_node.jstree", function(node, parent, position, old_parent, old_position, is_multi, old_instance, new_instance){
@@ -28,7 +29,7 @@ $(function (){
     console.log(parent);
     console.log(position);
     console.log(old_parent);
-  }); 
+  });
 
 
   $('#jstree_json_dirs').on("select_node.jstree", function(node, selected, e){
@@ -45,8 +46,9 @@ $(function (){
         },
         'check_callback' : true
       },
-      "plugins": ["contextmenu","state","search", "wholerow", "dnd", "checkbox", "types","json_data", "ui", "crrm"],
-      "move_node":"true"
+      "plugins": ["checkbox", "contextmenu", "crrm", "dnd", "json_data", "state", "types", "search", "ui", "wholerow"],
+      "move_node":"true",
+      "rename_node":"true"
     });  
 
 
