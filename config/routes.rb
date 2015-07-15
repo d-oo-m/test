@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'filesystem/update'
 
+  get 'filesystem/update_pos'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
