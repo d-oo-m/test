@@ -10,4 +10,8 @@ require 'rubygems'
 # Install:
 #  sudo gem install ci_reporter
 gem 'ci_reporter'
-#require 'ci/reporter/rake/test_unit' # use this if you're using Test::Unit
+
+if ENV['GENERATE_REPORTS'] == 'true'
+  require 'ci/reporter/rake/rspec'
+  task :rspec => 'ci:setup:rspec'
+end
