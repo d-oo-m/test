@@ -48,5 +48,6 @@ group :development, :test do
   gem 'turn', :require => false
 
   gem 'simplecov', :require => false, :group => :test
+  gem 'simplecov-rcov', :require => false, :group => :test
 end
 
