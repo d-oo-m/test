@@ -13,5 +13,6 @@ gem 'ci_reporter'
 
 if ENV['GENERATE_REPORTS'] == 'true'
   require 'ci/reporter/rake/rspec'
+  require 'ci/reporter/rake/test_unit' # use this if you're using Test::Unit
   task :rspec => 'ci:setup:rspec'
 end
