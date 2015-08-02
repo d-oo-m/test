@@ -3,6 +3,8 @@ require 'simplecov-rcov'
 SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
 SimpleCov.start 'rails' do
 	add_filter 'vendor/'
+
+  SimpleCov.minimum_coverage 99
 end
 
 ENV['RAILS_ENV'] ||= 'test'
